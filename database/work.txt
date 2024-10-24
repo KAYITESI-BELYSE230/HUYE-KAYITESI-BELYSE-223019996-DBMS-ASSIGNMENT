@@ -1,0 +1,123 @@
+Enter password:
+Welcome to the MySQL monitor.  Commands end with ; or \g.
+Your MySQL connection id is 27
+Server version: 8.3.0 MySQL Community Server - GPL
+
+Copyright (c) 2000, 2024, Oracle and/or its affiliates.
+
+Oracle is a registered trademark of Oracle Corporation and/or its
+affiliates. Other names may be trademarks of their respective
+owners.
+
+Type 'help;' or '\h' for help. Type '\c' to clear the current input statement.
+
+mysql>
+mysql> use Ruhande;
+Database changed
+mysql> select*from Ngoma;
++------+------------+-----------+--------+----------+------------+-----------+----------+------------+-----------+------+
+| ID   | first_name | last_name | Gender | province | district   | sector    | cell     | E_mail     | phone     | age  |
++------+------------+-----------+--------+----------+------------+-----------+----------+------------+-----------+------+
+|    1 | Kayitesi   | Belyse    | Female | East     | Nyagatare  | Nyagatare | Mirama   | kayibelyse | 786743889 |   27 |
+|    2 | Gatete     | Adolphe   | Male   | Kigali   | Kicukiro   | Masaka    | Rwintare | adolphendu | 798943889 |   32 |
+|    3 | Mugabe     | Charles   | Male   | South    | Ruhango    | Bweramana | Rusororo | Alimutesi0 | 798900889 |   24 |
+|    4 | Gatesi     | Esther    | Female | South    | huye       | Ngoma     | Tumba    | niyesther0 | 788900889 |   35 |
+|    5 | Gatesi     | Benitha   | Female | East     | Ngoma      | Ngoma     | mwesi    | tessybenit | 788900889 |   30 |
+|    6 | Gatesi     | joanah    | Female | North    | Musanze    | Kigombe   | Kizungu  | joan200@gm | 798900889 |   32 |
+|    7 | Mugisha    | john      | Male   | West     | Rubavu     | Bigogwe   | Barija   | john05@gma | 798900889 | NULL |
+|    8 | Mihigo     | joel      | Male   | West     | Karongi    | Karama    | Buguma   | joel105@gm | 798150889 | NULL |
+|    9 | Ganza      | Noela     | Female | East     | Rwamagana  | Ntunga    | gashenyi | noela105@g | 780150889 | NULL |
+|   10 | Cyusa      | levy      | Male   | Kigali   | Nyarugenge | Kabeza    | Kabeza   | cyulevy05@ | 789050889 | NULL |
++------+------------+-----------+--------+----------+------------+-----------+----------+------------+-----------+------+
+10 rows in set (0.00 sec)
+
+mysql> update Ngoma set age='31' where id='7';
+Query OK, 1 row affected (0.00 sec)
+Rows matched: 1  Changed: 1  Warnings: 0
+
+mysql> update Ngoma set age='28' where id='8';
+Query OK, 1 row affected (0.00 sec)
+Rows matched: 1  Changed: 1  Warnings: 0
+
+mysql> update Ngoma set age='40' where id='9';
+Query OK, 1 row affected (0.00 sec)
+Rows matched: 1  Changed: 1  Warnings: 0
+
+mysql> update Ngoma set age='19' where id='10';
+Query OK, 1 row affected (0.00 sec)
+Rows matched: 1  Changed: 1  Warnings: 0
+
+mysql> select*from Ngoma;
++------+------------+-----------+--------+----------+------------+-----------+----------+------------+-----------+------+
+| ID   | first_name | last_name | Gender | province | district   | sector    | cell     | E_mail     | phone     | age  |
++------+------------+-----------+--------+----------+------------+-----------+----------+------------+-----------+------+
+|    1 | Kayitesi   | Belyse    | Female | East     | Nyagatare  | Nyagatare | Mirama   | kayibelyse | 786743889 |   27 |
+|    2 | Gatete     | Adolphe   | Male   | Kigali   | Kicukiro   | Masaka    | Rwintare | adolphendu | 798943889 |   32 |
+|    3 | Mugabe     | Charles   | Male   | South    | Ruhango    | Bweramana | Rusororo | Alimutesi0 | 798900889 |   24 |
+|    4 | Gatesi     | Esther    | Female | South    | huye       | Ngoma     | Tumba    | niyesther0 | 788900889 |   35 |
+|    5 | Gatesi     | Benitha   | Female | East     | Ngoma      | Ngoma     | mwesi    | tessybenit | 788900889 |   30 |
+|    6 | Gatesi     | joanah    | Female | North    | Musanze    | Kigombe   | Kizungu  | joan200@gm | 798900889 |   32 |
+|    7 | Mugisha    | john      | Male   | West     | Rubavu     | Bigogwe   | Barija   | john05@gma | 798900889 |   31 |
+|    8 | Mihigo     | joel      | Male   | West     | Karongi    | Karama    | Buguma   | joel105@gm | 798150889 |   28 |
+|    9 | Ganza      | Noela     | Female | East     | Rwamagana  | Ntunga    | gashenyi | noela105@g | 780150889 |   40 |
+|   10 | Cyusa      | levy      | Male   | Kigali   | Nyarugenge | Kabeza    | Kabeza   | cyulevy05@ | 789050889 |   19 |
++------+------------+-----------+--------+----------+------------+-----------+----------+------------+-----------+------+
+10 rows in set (0.00 sec)
+
+mysql> select ID,first_name,Gender,E_mail from Ngoma;
++------+------------+--------+------------+
+| ID   | first_name | Gender | E_mail     |
++------+------------+--------+------------+
+|    1 | Kayitesi   | Female | kayibelyse |
+|    2 | Gatete     | Male   | adolphendu |
+|    3 | Mugabe     | Male   | Alimutesi0 |
+|    4 | Gatesi     | Female | niyesther0 |
+|    5 | Gatesi     | Female | tessybenit |
+|    6 | Gatesi     | Female | joan200@gm |
+|    7 | Mugisha    | Male   | john05@gma |
+|    8 | Mihigo     | Male   | joel105@gm |
+|    9 | Ganza      | Female | noela105@g |
+|   10 | Cyusa      | Male   | cyulevy05@ |
++------+------------+--------+------------+
+10 rows in set (0.00 sec)
+
+mysql> Select*from Ngoma where first_name='Gatesi' and province='North';
++------+------------+-----------+--------+----------+----------+---------+---------+------------+-----------+------+
+| ID   | first_name | last_name | Gender | province | district | sector  | cell    | E_mail     | phone     | age  |
++------+------------+-----------+--------+----------+----------+---------+---------+------------+-----------+------+
+|    6 | Gatesi     | joanah    | Female | North    | Musanze  | Kigombe | Kizungu | joan200@gm | 798900889 |   32 |
++------+------------+-----------+--------+----------+----------+---------+---------+------------+-----------+------+
+1 row in set (0.00 sec)
+
+mysql> Select*from Ngoma where first_name='Gatesi' or cell='Ngoma';
++------+------------+-----------+--------+----------+----------+---------+---------+------------+-----------+------+
+| ID   | first_name | last_name | Gender | province | district | sector  | cell    | E_mail     | phone     | age  |
++------+------------+-----------+--------+----------+----------+---------+---------+------------+-----------+------+
+|    4 | Gatesi     | Esther    | Female | South    | huye     | Ngoma   | Tumba   | niyesther0 | 788900889 |   35 |
+|    5 | Gatesi     | Benitha   | Female | East     | Ngoma    | Ngoma   | mwesi   | tessybenit | 788900889 |   30 |
+|    6 | Gatesi     | joanah    | Female | North    | Musanze  | Kigombe | Kizungu | joan200@gm | 798900889 |   32 |
++------+------------+-----------+--------+----------+----------+---------+---------+------------+-----------+------+
+3 rows in set (0.00 sec)
+
+mysql> alter table Ngoma drop Gender;
+Query OK, 10 rows affected (0.06 sec)
+Records: 10  Duplicates: 0  Warnings: 0
+
+mysql> select*from Ngoma;
++------+------------+-----------+----------+------------+-----------+----------+------------+-----------+------+
+| ID   | first_name | last_name | province | district   | sector    | cell     | E_mail     | phone     | age  |
++------+------------+-----------+----------+------------+-----------+----------+------------+-----------+------+
+|    1 | Kayitesi   | Belyse    | East     | Nyagatare  | Nyagatare | Mirama   | kayibelyse | 786743889 |   27 |
+|    2 | Gatete     | Adolphe   | Kigali   | Kicukiro   | Masaka    | Rwintare | adolphendu | 798943889 |   32 |
+|    3 | Mugabe     | Charles   | South    | Ruhango    | Bweramana | Rusororo | Alimutesi0 | 798900889 |   24 |
+|    4 | Gatesi     | Esther    | South    | huye       | Ngoma     | Tumba    | niyesther0 | 788900889 |   35 |
+|    5 | Gatesi     | Benitha   | East     | Ngoma      | Ngoma     | mwesi    | tessybenit | 788900889 |   30 |
+|    6 | Gatesi     | joanah    | North    | Musanze    | Kigombe   | Kizungu  | joan200@gm | 798900889 |   32 |
+|    7 | Mugisha    | john      | West     | Rubavu     | Bigogwe   | Barija   | john05@gma | 798900889 |   31 |
+|    8 | Mihigo     | joel      | West     | Karongi    | Karama    | Buguma   | joel105@gm | 798150889 |   28 |
+|    9 | Ganza      | Noela     | East     | Rwamagana  | Ntunga    | gashenyi | noela105@g | 780150889 |   40 |
+|   10 | Cyusa      | levy      | Kigali   | Nyarugenge | Kabeza    | Kabeza   | cyulevy05@ | 789050889 |   19 |
++------+------------+-----------+----------+------------+-----------+----------+------------+-----------+------+
+10 rows in set (0.00 sec)
+
+mysql>
